@@ -8,7 +8,7 @@ function AllHotel() {
         <div className='max-w-screen-2xl mx-auto p-5'>
             <div className="flex flex-wrap justify-between items-center w-full mb-6">
                 <h1 className="text-3xl md:text-5xl font-bold font-serif text-black text-center md:text-left flex-1">
-                    Featured Hotels in Riyadh!
+                    Featured Hotels in Riyadhhh!
                 </h1>
                 <div className="flex space-x-4">
                     <BsChevronCompactLeft className="text-orange-300 text-2xl cursor-pointer" />
