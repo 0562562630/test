@@ -11,6 +11,7 @@ function Hero() {
    ];
 
    const [currentIndex, setCurrentIndex] = useState(0);
+   const [menuOpen, setMenuOpen] = useState(false);
 
    const prevSlide = () => {
       const isFirstSlide = currentIndex === 0;
@@ -28,42 +29,61 @@ function Hero() {
       setCurrentIndex(slideIndex);
    };
 
+   const toggleMenu = () => {
+      setMenuOpen(!menuOpen);
+   };
+
    return (
-      <div className='max-w-full h-[700px] w-full mx-auto py-1 px-4 relative my-1 font-serif  '>
+      <div className='max-w-full h-[700px] w-full mx-auto py-1 px-4 relative my-1 font-serif'>
          <div
             style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
             className='w-full h-full bg-center bg-cover duration-500 flex flex-col justify-between'
          >
+            {/* Navbar */}
+            <nav className="relative p-5  mx-auto flex justify-between items-center md:w-full">
+               <Link href="/">
+                  <div className="flex items-center hover:text-slate-500">
+                     <div className="size-4 bg-slate-600 rounded-full"></div>
+                     <h1 className="text-xl font-bold">Boarding</h1>
+                  </div>
+               </Link>
 
-          <nav className="relative p-5 max-w-screen-lg mx-auto flex justify-between items-center">
-            <Link href="/">
-            <div className="flex items-center hover:text-slate-500">
+               {/* زر القائمة الجانبية (يظهر فقط في الشاشات الصغيرة والمتوسطة) */}
+               <div className="md:hidden">
+                  <button onClick={toggleMenu} className="text-white text-2xl">
+                     ☰
+                  </button>
+               </div>
 
-                              <div className=" size-4 bg-slate-600 rounded-full flex justify-end "></div>
-                              <h1 className="text-xl font-bold">Boarding</h1>
-                           </div>
-            </Link>
+               {/* روابط القائمة - تظهر فقط في الشاشات الكبيرة */}
+               <div className="hidden md:flex space-x-6 text-black ">
+                  <Link href="/">Home</Link>
+                  <Link href="#room">Room</Link>
+                  <Link href="#contact">Contact</Link>
+                  <Link href="#blog">Blog</Link>
+                  <Link href="#about">About</Link>
+               </div>
 
-            {/* زر القائمة للجوال */}
-            <div className="md:hidden">
-              <button className="text-white text-2xl">☰</button>
+               <button className="hidden md:block bg-[#BB8012] text-white rounded-full py-2 px-6">
+                  Book Now
+               </button>
+            </nav>
+
+            {/* القائمة الجانبية - تظهر فقط عند الضغط في الشاشات الصغيرة والمتوسطة */}
+            <div className={`absolute top-16 left-0 w-full bg-white text-black flex flex-col items-center space-y-6 py-5 transition-transform duration-300 ${menuOpen ? "block" : "hidden"} md:hidden`}>
+               <Link href="/" onClick={toggleMenu}>Home</Link>
+               <Link href="#room" onClick={toggleMenu}>Room</Link>
+               <Link href="#contact" onClick={toggleMenu}>Contact</Link>
+               <Link href="#blog" onClick={toggleMenu}>Blog</Link>
+               <Link href="#about" onClick={toggleMenu}>About</Link>
+               <button className="bg-[#BB8012] text-white rounded-full py-2 px-6">
+                  Book Now
+               </button>
             </div>
 
-            {/* الروابط (تظهر فقط على الشاشات الكبيرة) */}
-            <div className="hidden md:flex space-x-6 text-white">
-              <Link href="/">Home</Link>
-              <Link href="#about">Room</Link>
-              <Link href="#contact">Contact</Link>
-              <Link href="#blog">Blog</Link>
-              <Link href="#about">About</Link>
-            </div>
-
-            <button className="hidden md:block bg-[#BB8012] text-white rounded-full py-2 px-6">
-              Book Now
-            </button>
-          </nav>
+            {/* المحتوى الرئيسي */}
             <div className="flex flex-col justify-end w-full p-5 max-w-screen-2xl mx-auto space-y-6">
-               <h1 className="   font-bold tracking-tighter text-center  text-white  lg:text-6xl   md:text-4xl  sm:text-2xl">
+               <h1 className="font-bold tracking-tighter text-center text-white lg:text-6xl md:text-4xl sm:text-2xl">
                   Find your Hotel & Many More, Touch The Dream!
                </h1>
                <p className="text-lg text-black text-center">
@@ -113,7 +133,5 @@ function Hero() {
 }
 
 export default Hero;
-
-
 
 
