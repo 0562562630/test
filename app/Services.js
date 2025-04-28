@@ -3,7 +3,7 @@ import React from 'react';
 function Services() {
     return (
         <div className='max-w-screen-2xl mx-auto p-5'>
-            <h1 className='text-4xl md:text-5xl text-center md:text-left text-black mt-8 font-bold font-serif'>
+            <h1 className='text-2xl md:text-5xl  md:text-left text-black mt-8 font-bold font-serif'>
                 What Services We Give You!
             </h1>
 
@@ -24,10 +24,10 @@ function Services() {
 }
 
 const servicesData = [
-    { title: 'Free Wifi', description: 'Enjoy free internet access throughout the hotel during your stay.' },
+    { title: 'Free Wifi', description: 'Enjoy free internet eccess throughout the hotel during your stay.' },
     { title: 'Easy Booking', description: 'The hotel offers a quick booking process for a comfortable experience.' },
     { title: 'Restaurants', description: 'The hotel provides diverse food service with various restaurants to satisfy all tastes.' },
-    { title: 'Swimming Pool', description: 'The hotel has a wonderful swimming pool for a relaxing and refreshing experience.' },
+    { title: 'Swimming pool', description: 'The hotel has a wonderful swimming pool for a relaxing and refreshing experience.' },
     { title: 'Beauty & Hotel', description: 'The hotel has a unique design, perfect for a remarkable experience.' },
     { title: 'Support Team', description: 'The hotel support team is always available for a comfortable guest experience.' },
 ];

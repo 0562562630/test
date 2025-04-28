@@ -3,7 +3,9 @@ import React from 'react';
 
 function Save() {
     return (
-        <div className='bg-[#BB8012] rounded-lg w-full max-w-md h-auto mx-auto flex flex-col mt-8 p-4'>
+        <div className='max-w-full w-full mx-auto py-10 px-4 relative'>
+
+     <div className='bg-[#BB8012] rounded-lg w-full max-w-md h-auto mx-auto flex flex-col mt-8 p-4'>
             <p className="text-white text-3xl text-center my-6">
                 Save Time & Save Money
             </p>
@@ -18,6 +20,7 @@ function Save() {
                         Subscribe Now
                     </h1>
                 </div>
+            </div>
             </div>
         </div>
     );
