@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+=======
+import { Geist, Geist_Mono , Fustat } from "next/font/google";
+import "./globals.css";
+
+const fustat = Fustat({
+  variable: "--font-Fustat",
+>>>>>>> 555aef71df0753d741e8455fb97b1bef54117a22
   subsets: ["latin"],
 });
 
@@ -20,7 +28,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
+<<<<<<< HEAD
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+=======
+        className={`${fustat.variable} antialiased`}
+>>>>>>> 555aef71df0753d741e8455fb97b1bef54117a22
       >
         {children}
       </body>
